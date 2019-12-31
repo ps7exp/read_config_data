@@ -2,7 +2,9 @@
 # Author::      Madhusudhan Reddy Marri.
 # Copyright::   Copyright (c) 20019
 # License::     MIT
-# URL::         https://github.com/p7exp/read_config_data
+# URL::         https://github.com/ps7exp/read_config_data
+
+require 'pry'
 
 class ReadConfigData
 
@@ -31,7 +33,13 @@ class ReadConfigData
       raise Errno::EACCES, "#{self.config_file} is not readable"
     end
 
+    # FIX ME: need to validate contents/structure?
+  end
+
+  # Import data from the config to our config object.
   def import_config()
+    # The config is top down.. anything after a [group] gets added as part
+    # of that group until a new [group] is found.
     group = nil
     worker = ''
     workers = []
@@ -124,7 +132,12 @@ class ReadConfigData
     end }
   end
 
-
+  # This method will provide the value held by the object "@param"
+  # where "@param" is actually the name of the param in the config
+  # file.
+  #
+  # DEPRECATED - will be removed in future versions
+  #
   def get_value(param)
     puts "ParseConfig Deprecation Warning: get_value() is deprecated. Use " + \
          "config['param'] or config['group']['param'] instead."
@@ -235,4 +248,3 @@ class ReadConfigData
   alias == eql?
 
 end
-
