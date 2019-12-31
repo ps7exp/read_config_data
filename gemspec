@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
-    s.name = %q{read_config_data}
-    s.version = "0.0.0"
+    s.name = 'Madhusudhan Reddy Marri'
+    s.version = "0.0.1"
     s.date = %q{2019-12-31}
     s.summary = ''
     s.files = [
