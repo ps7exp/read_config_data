@@ -4,8 +4,6 @@
 # License::     MIT
 # URL::         https://github.com/ps7exp/read_config_data
 
-require 'pry'
-
 class ReadConfigData
 
   Version = '0.0.1'
